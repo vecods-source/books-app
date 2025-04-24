@@ -28,6 +28,6 @@ export const protect = (req: Request, res: Response, next: NextFunction) => {
     console.log("Decoded token:", decoded); // Log the decoded token for debugging
     next();
   } catch (error) {
-    res.status(401).json({ message: "Token failed" });
+    return res.status(401).json({ message: "Token failed" });
   }
 };
